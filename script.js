@@ -45,9 +45,13 @@ function resizeCells(){
     const grid = document.querySelector('.grid')
     grid.innerHTML = ""
 
-    alert("enter new grid size")
+    alert("enter new grid size max size 100")
     cols = prompt("enter cols size")
     rows = prompt("enter rows size")
+
+    if(cols >= 100 || rows >= 100){
+       return alert("cant be 100 or greater")
+    }
 
     createCells(rows, cols)
 }
