@@ -30,6 +30,8 @@ function cellHover(e) {
     case "normal":
       e.target.className = "hover";
       break;
+      case "random":
+      e.target.style.backgroundColor = generateRandomColor()
   }
 }
 function cellNoHover(e) {
@@ -58,5 +60,22 @@ function resizeCells(){
 
 // func change to random color cells
 // generate random color for each cell
+
+const randomColorBtn = document.getElementById('random-color-btn')
+randomColorBtn.addEventListener('click', () => {
+  cellHoverMode = "random"
+})
+
+function generateRandomColor(){
+  const digits = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
+  let hexCode = "#"
+
+  while(hexCode.length < 7){
+    hexCode += Math.floor(Math.random() * digits.length)
+  }
+
+  return hexCode
+
+}
 
 // func change to dark cells with that goes from light to dark
