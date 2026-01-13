@@ -5,7 +5,7 @@ let cellHoverMode = "normal";
 
 // func create grid cells
 
-function createCells(rows, cols) {
+function createCells(rows = 16, cols = 16) {
   // get grid element
   const grid = document.querySelector(".grid");
   let gridSize = grid.clientWidth + grid.clientHeight;
@@ -38,6 +38,19 @@ function cellNoHover(e) {
 
 // func change grid row & col size
 // display new grid
+const resizeBtn = document.getElementById("change-grid-btn")
+
+resizeBtn.addEventListener('click', resizeCells)
+function resizeCells(){
+    const grid = document.querySelector('.grid')
+    grid.innerHTML = ""
+
+    alert("enter new grid size")
+    cols = prompt("enter cols size")
+    rows = prompt("enter rows size")
+
+    createCells(rows, cols)
+}
 
 // func change to random color cells
 // generate random color for each cell
