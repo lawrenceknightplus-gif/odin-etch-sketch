@@ -14,8 +14,8 @@ function createCells(rows, cols) {
     // create new div el
     let cell = document.createElement("div");
     // display new grid to user on webpage
-    cell.style.width = `${gridSize / cols }px`;
-    cell.style.height = `${gridSize / rows }px`;
+    cell.style.width = `${gridSize / cols}px`;
+    cell.style.height = `${gridSize / rows}px`;
     cell.addEventListener("mouseover", cellHover);
     // cell.addEventListener("mouseout", cellNoHover);
 
